@@ -14,6 +14,7 @@ import {
 import { Bot, User, ArrowRight, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Header } from '@/components/ui/Header';
 
 const questions = [
     {
@@ -172,22 +173,14 @@ export default function FormChat() {
 
     return (
         <div className='min-h-screen bg-gradient-to-b from-primary/10 to-background flex flex-col'>
-            {/* App Header */}
-            <header className='w-full bg-background border-b py-4 px-6 flex items-center justify-between'>
-                <div className='flex items-center gap-2'>
-                    <Sparkles className='h-6 w-6 text-primary' />
-                    <h1 className='text-xl font-bold'>[Your App]</h1>
-                </div>
-                <div className='text-sm text-muted-foreground'>
-                    {!showWelcome && !isComplete && (
-                        <span>
-                            Step {currentQuestionIndex + 1} of{' '}
-                            {questions.length}
-                        </span>
-                    )}
-                </div>
-            </header>
+            <Header
+                currentQuestionIndex={currentQuestionIndex}
+                totalQuestions={questions.length}
+                showWelcome={showWelcome}
+                isComplete={isComplete}
+            />
 
+            {/* App Header */}
             <AnimatePresence mode='wait'>
                 {showWelcome ? (
                     <motion.div
@@ -203,12 +196,12 @@ export default function FormChat() {
                                 <Sparkles className='h-12 w-12' />
                             </div>
                             <h1 className='text-4xl font-bold tracking-tight'>
-                                Welcome to [Your App]
+                                Welcome to StudyTaco
                             </h1>
                             <p className='text-xl text-muted-foreground'>
-                                Let's get you set up in just a few quick steps.
-                                Our assistant will guide you through the
-                                process.
+                                Let&apos;s get you set up in just a few quick
+                                steps. Our assistant Meela will guide you
+                                through the process.
                             </p>
                             <Button
                                 size='lg'
@@ -423,11 +416,11 @@ export default function FormChat() {
                             ) : (
                                 <div className='space-y-4 text-center'>
                                     <h2 className='text-2xl font-bold'>
-                                        You're all set!
+                                        You&apos;re all set!
                                     </h2>
                                     <p className='text-muted-foreground'>
                                         Thank you for completing your profile.
-                                        We're excited to have you on board!
+                                        We&apos;re excited to have you on board!
                                     </p>
                                     <Button
                                         onClick={completeOnboarding}
