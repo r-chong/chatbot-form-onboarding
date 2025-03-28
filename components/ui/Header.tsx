@@ -1,4 +1,4 @@
-import { Sparkles } from 'lucide-react';
+import Link from 'next/link';
 
 interface HeaderProps {
     currentQuestionIndex?: number;
@@ -16,8 +16,16 @@ export function Header({
     return (
         <header className='w-full bg-background border-b py-4 px-6 flex items-center justify-between'>
             <div className='flex items-center gap-2'>
-                <Sparkles className='h-6 w-6 text-primary' />
-                <h1 className='text-xl font-bold'>StudyTaco</h1>
+                <div className='flex flex-row gap-2'>
+                    <Link href='/' className='select-none cursor-pointer'>
+                        <div className='flex flex-row gap-2'>
+                            <p className='text-xl select-none'>🌮</p>
+                            <h1 className='text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-teal-500 select-none'>
+                                StudyTaco
+                            </h1>
+                        </div>
+                    </Link>
+                </div>
             </div>
             <div className='text-sm text-muted-foreground'>
                 {!showWelcome && !isComplete && (
