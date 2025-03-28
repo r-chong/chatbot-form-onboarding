@@ -15,58 +15,32 @@ import { Bot, User, ArrowRight, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Define the questions for the chatbot form
 const questions = [
     {
         id: 'name',
-        text: "Hi there! Welcome to StudyTaco. What's your name?",
+        text: "Hi there 👋 I'm Meela, your friendly Math AI tutor. I'm here to help make learning math easier, fun, and bite-sized — just like tacos 🌮 Can you tell me your name?",
         type: 'text',
     },
     {
         id: 'email',
-        text: 'Great to meet you {{name}}! What email would you like to use for your account?',
+        text: 'Thanks, {{name}} nice to meet you! Before we begin, can you please enter your email so I can save your learning progress?',
         type: 'email',
     },
     {
-        id: 'interest',
-        text: 'What brings you to [Your App] today?',
-        type: 'select',
-        options: [
-            'Personal Projects',
-            'Work/Business',
-            'Education',
-            'Just Exploring',
-            'Other',
-        ],
+        id: 'password',
+        text: 'Great! Now please create a password for your account.',
+        type: 'password',
     },
     {
-        id: 'experience',
-        text: 'How familiar are you with tools like ours?',
+        id: 'referral',
+        text: 'How did you hear about StudyTaco?',
         type: 'select',
-        options: [
-            'Complete Beginner',
-            'Some Experience',
-            'Intermediate',
-            'Advanced',
-            'Expert',
-        ],
+        options: ['Instagram', 'Twitter/X', 'Friends/Family', 'Other'],
     },
     {
-        id: 'goals',
-        text: 'What are you hoping to accomplish with [Your App]?',
+        id: 'next',
+        text: 'All done, thanks {{name}}! 🙌 You can now: Start a quick Assessment to build your personalized plan Explore the Homework Helper Or Choose a Topic to start learning right away Would you like me to walk you through these features?',
         type: 'textarea',
-    },
-    {
-        id: 'features',
-        text: 'Which feature are you most excited about?',
-        type: 'select',
-        options: [
-            'Collaboration Tools',
-            'Analytics Dashboard',
-            'Integration Options',
-            'Mobile Access',
-            'All of the above',
-        ],
     },
 ];
 
