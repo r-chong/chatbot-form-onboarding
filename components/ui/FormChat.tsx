@@ -194,7 +194,7 @@ export default function FormChat() {
                     >
                         <div className='text-center space-y-6 max-w-2xl'>
                             <div className='bg-primary text-primary-foreground rounded-full p-4 inline-block mx-auto'>
-                                <Sparkles className='h-12 w-12' />
+                                <p className='text-4xl select-none'>🌮</p>
                             </div>
                             <h1 className='text-4xl font-bold tracking-tight'>
                                 Welcome to StudyTaco
