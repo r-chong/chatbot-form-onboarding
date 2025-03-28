@@ -15,6 +15,7 @@ import { Bot, User, ArrowRight, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Header } from '@/components/ui/Header';
+import Image from 'next/image';
 
 const questions = [
     {
@@ -258,8 +259,14 @@ export default function FormChat() {
                                     >
                                         <div className='flex items-start gap-3 max-w-[80%]'>
                                             {message.type === 'bot' && (
-                                                <div className='bg-primary text-primary-foreground rounded-full p-2 mt-1'>
-                                                    <Bot size={20} />
+                                                <div className='bg-primary text-primary-foreground border-gray-400 border-2 rounded-full mt-1'>
+                                                    <Image
+                                                        src='/meela.png'
+                                                        alt='Meela'
+                                                        width={120}
+                                                        height={120}
+                                                        className='rounded-full'
+                                                    />
                                                 </div>
                                             )}
 
